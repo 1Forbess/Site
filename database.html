@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных студентов</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        th {
+            cursor: pointer;
+        }
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            max-width: 90%;
+        }
+        .modal-header {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .modal-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .modal-button {
+            background-color: #536dfe;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-align: center;
+        }
+        .modal-button:hover {
+            background-color: #304ffe;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #536dfe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #304ffe;
+        }
+        .AddStudent {
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>База данных студентов</h1>
+            <p>Здесь вы можете управлять информацией о студентах, включая их успеваемость, группы и статус</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="logo-text">StudentHub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="database.html">База данных</a></li>
+            <li><a href="analytics.html">Аналитика</a></li>
+            <!-- <li><a href="reports.html">Отчеты</a></li> -->
+        </ul>
+        <div class="user-profile">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc16NVdz9GLMTab65yw7CMMIZ3mwb_nCQELQ&s" alt="Профиль">
+            <span>Администратор</span>
+        </div>
+    </nav>
+
+    <div class="data-table">
+        <div class="table-header">
+            <h2>Список студентов</h2>
+        </div>
+        <div class="table-container">
+
+    
+
+            <table id="studentTable" border="1">
+        <thead>
+            <tr>
+                <th data-column="id">ID</th>
+                <th data-column="fio">ФИО</th>
+                <th data-column="course">Курс</th>
+                <th data-column="group">Группа</th>
+                <th data-column="form">Форма обучения</th>
+                <th data-column="type">Тип обучения</th>
+                <th data-column="address">Адрес проживания</th>
+                <th data-column="from">Откуда прибыл</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <button class="AddStudent" onclick="openModal()">Добавить студента</button>
+
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Добавить нового студента</div>
+            <form id="student-form">
+                <input type="text" id="fio" placeholder="ФИО" required>
+                <input type="number" id="course" placeholder="Курс" required>
+                <select id="group" required>
+                    <option value="ПО1901">ПО1901</option>
+                    <option value="ПО1902">ПО1902</option>
+                    <option value="ПО1903">ПО1903</option>
+                    <option value="ПО1904">ПО1904</option>
+                    <option value="ПО1905">ПО1905</option>
+                </select>
+                <select id="form" required>
+                    <option value="очное">очное</option>
+                    <option value="заочное">заочное</option>
+                </select>
+                <select id="type" required>
+                    <option value="грант">грант</option>
+                    <option value="платка">платка</option>
+                </select>
+                <input type="text" id="address" placeholder="Адрес проживания" required>
+                <input type="text" id="from" placeholder="Откуда приехал" required>
+                <div class="modal-footer">
+                    <button type="submit" class="modal-button">Добавить</button>
+                </div>
+            </form>
+            <button class="modal-button" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О системе</h4>
+                <p>Современная система управления данными студентов для образовательных учреждений.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="#support">Поддержка</a></li>
+                    <li><a href="#privacy">Конфиденциальность</a></li>
+                    <li><a href="#terms">Условия использования</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>Email: StudentHub@gmail.com</p>
+                <p>Тел: +7 747 539 5394</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 StudentHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="database.js" defer></script>
+</body>
+</html>

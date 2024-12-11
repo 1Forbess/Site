@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">Функция еще в разработке...</div>
+            <p>Через <span id="timer">3</span> секунд вы будете перенаправлены на главную страницу.</p>
+        </div>
+    </div>
+    
+    
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Аналитика базы данных</h1>
+            <p>Обзор статистики по учебному заведению, включая успеваемость и активность студентов</p>
+        </div>
+    </div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="logo-text">StudentHub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="database.html">База данных</a></li>
+            <li><a href="analytics.html">Аналитика</a></li>
+            <!-- <li><a href="reports.html">Отчеты</a></li> -->
+        </ul>
+        <div class="user-profile">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc16NVdz9GLMTab65yw7CMMIZ3mwb_nCQELQ&s" alt="Профиль">
+            <span>Администратор</span>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <h1 class="anan">Аналитика</h1>
+        <!-- <p>Обзор статистики по учебному заведению, включая успеваемость и активность студентов.</p> -->
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Общее количество студентов</h3>
+                <p id="total-students">Загрузка...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Средняя успеваемость</h3>
+                <p id="average-grade">Загрузка...</p>
+            </div>
+            <div class="stat-card">
+                <h3>Студенты с высоким рейтингом</h3>
+                <p id="top-students">Загрузка...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О системе</h4>
+                <p>Современная система управления данными студентов для образовательных учреждений.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="#support">Поддержка(none)</a></li>
+                    <li><a href="#privacy">Конфиденциальность(none)</a></li>
+                    <li><a href="#terms">Условия использования(none)</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>Email: StudentHub@gmail.com(none)</p>
+                <p>Тел: +7 747 539 5394</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 StudentHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="analytics.js"></script>
+</body>
+</html>

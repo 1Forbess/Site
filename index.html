@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управления студентами</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span class="logo-text">StudentHub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="database.html">База данных</a></li>
+            <li><a href="analytics.html">Аналитика</a></li>
+            <!-- <li><a href="reports.html">Отчеты</a></li> -->
+        </ul>
+        <div class="user-profile">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc16NVdz9GLMTab65yw7CMMIZ3mwb_nCQELQ&s" alt="Профиль">
+            <span>Администратор</span>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Система управления данными студентов</h1>
+            <p>Современное решение для учебных заведений</p>
+            <button class="primary-btn"><a href="database.html">Начать работу</a></button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <!-- Статистика -->
+<div class="stats-container">
+    <div class="stat-card">
+        <i class="fas fa-user-graduate"></i>
+        <h3>Группа</h3>
+        <span class="number" id="totalStudents">ВТ2310</span>
+    </div>
+    <div class="stat-card">
+        <i class="fas fa-university"></i>
+        <h3>Колледж</h3>
+        <span class="number" id="totalGroups">AITU</span>
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О системе</h4>
+                <p>Современная система управления данными студентов для образовательных учреждений.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Быстрые ссылки</h4>
+                <ul>
+                    <li><a href="#support">Поддержка</a></li>
+                    <li><a href="#privacy">Конфиденциальность</a></li>
+                    <li><a href="#terms">Условия использования</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Контакты</h4>
+                <p>Email: StudentHub@gmail.com</p>
+                <p>Тел: +7 747 539 5394</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 StudentHub. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+</body>
+</html>
